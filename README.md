@@ -89,4 +89,5 @@ Ou https://gis.stackexchange.com/questions/254473/detecting-branched-polygon-sha
 
 O que é ![ST](https://stackoverflow.com/questions/7234679/what-is-st-in-postgis)
 
-
+Vídeo que talvez seja util. 
+https://www.youtube.com/watch?v=FqQQQpYltZU
