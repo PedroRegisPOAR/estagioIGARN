@@ -1,6 +1,5 @@
-# estagioIGARN
-Este repositório contém anotações sobre o que eu estou fazendo no estagio, como links etc.
 
+# Este repositório contém anotações sobre o que eu estou fazendo no estagio, como links etc.
 
 
 Video coreano
@@ -33,3 +32,58 @@ https://gis.stackexchange.com/questions/195373/programmatically-finding-polygons
 https://howtoinqgis.wordpress.com/2016/10/25/how-to-select-features-in-qgis-using-python/
 
 https://stackoverflow.com/questions/33311616/find-coordinate-of-closest-point-on-polygon-shapely?noredirect=1&lq=1
+
+
+
+
+Instalação do PostgreSQL: https://www.youtube.com/watch?v=mKts0JjuNqM
+
+Integração do QGIS com o PostGIS: https://www.youtube.com/watch?v=OIRcOjLXn-U
+
+
+https://gis.stackexchange.com/questions/170174/creating-centerline-of-polygon-using-postgis
+
+
+https://stackoverflow.com/questions/39646754/postgresql-postgis-bug-in-st-approximatemedialaxis
+
+
+Outras soluções 
+
+https://gis.stackexchange.com/questions/237627/buffering-polygon-until-it-hits-neighbor-using-pyqgis/237630
+
+
+Solução que usa pytho puro
+
+https://gis.stackexchange.com/questions/136143/how-to-compute-straight-skeletons-using-python/136159#136159
+
+
+Outras soluções
+https://gis.stackexchange.com/questions/177/simplifying-polygons-to-linestring/261#261
+
+Instalar PostgreSQL
+
+https://www.youtube.com/watch?v=mKts0JjuNqM
+
+https://www.youtube.com/watch?v=OIRcOjLXn-U
+
+
+Problema parecido com o meu:
+
+https://gis.stackexchange.com/questions/171145/skeletonize-vectors-in-qgis-python
+
+Esse é mais avançado do que o meu.
+https://gis.stackexchange.com/questions/254473/detecting-branched-polygon-shape/254487
+
+
+Uma função do PostGIS ST_HausdorffDistance
+https://gis.stackexchange.com/questions/159699/how-to-find-the-irregular-polygons-in-qgis-using-python/159734
+
+www.udcus.com/blog/2017/06/28/creating-centerlines-postgis-and-arcgis
+
+
+Uma possivel solução pode ser fazer um buffer para selecionar os 
+açudes que estão proximos a drenagem.
+
+Ou https://gis.stackexchange.com/questions/254473/detecting-branched-polygon-shape
+
+
