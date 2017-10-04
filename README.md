@@ -87,3 +87,6 @@ açudes que estão proximos a drenagem.
 Ou https://gis.stackexchange.com/questions/254473/detecting-branched-polygon-shape
 
 
+O que é ![ST](https://stackoverflow.com/questions/7234679/what-is-st-in-postgis)
+
+
