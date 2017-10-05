@@ -108,3 +108,13 @@ https://www.youtube.com/watch?v=TbE3LJIU2aM
 https://www.youtube.com/watch?v=Y0SBkjcyXOc&index=5&list=PLhLH2vlRJtLnI8fo7CSPXtEI2qhFog5Ev
 
 
+links sobre a diferenca de se usar banco de dados
+https://www.youtube.com/watch?v=pM7Ih7rM8-c
+
+
+link funcoes ST
+https://www.dataiku.com/learn/guide/other/geo/convert-coordinates-with-PostGIS.html
+
+
+link sobre centerline
+https://www.youtube.com/watch?v=WXWm_wrM4SY
