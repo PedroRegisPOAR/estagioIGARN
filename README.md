@@ -101,3 +101,10 @@ error install postgresql unable to write inside TEMP environment variable
 
 Link que ensina como filtrar no PostGIS
 https://www.youtube.com/watch?v=-Fi8oX9AnA8
+
+Links sobre historico sobre o PostGIS.
+
+https://www.youtube.com/watch?v=TbE3LJIU2aM
+https://www.youtube.com/watch?v=Y0SBkjcyXOc&index=5&list=PLhLH2vlRJtLnI8fo7CSPXtEI2qhFog5Ev
+
+
