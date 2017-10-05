@@ -93,3 +93,11 @@ O que é ![ST](https://stackoverflow.com/questions/7234679/what-is-st-in-postgis
 
 Vídeo que talvez seja util. 
 https://www.youtube.com/watch?v=FqQQQpYltZU
+
+
+Erro no meu computador
+error install postgresql unable to write inside TEMP environment variable
+
+
+Link que ensina como filtrar no PostGIS
+https://www.youtube.com/watch?v=-Fi8oX9AnA8
