@@ -118,3 +118,13 @@ https://www.dataiku.com/learn/guide/other/geo/convert-coordinates-with-PostGIS.h
 
 link sobre centerline
 https://www.youtube.com/watch?v=WXWm_wrM4SY
+
+Excelente tutorial sobre como usar o PostGIS.
+http://duspviz.mit.edu/tutorials/intro-postgis/
+
+Outro tutorial
+http://twiav-tt.blogspot.com.br/2012/07/postgis-using-latitude-and-longitude-to.html
+
+Usandop o Excel para fazer pontos.
+http://libguides.mit.edu/c.php?g=176295&p=1161396
+http://excelgeocodingtool.com/
