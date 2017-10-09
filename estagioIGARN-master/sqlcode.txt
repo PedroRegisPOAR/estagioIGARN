@@ -1,0 +1,49 @@
+baseado neste video https://www.youtube.com/watch?v=6z2sZlLmPmo
+
+fix-incorrect-srid
+https://gis.stackexchange.com/questions/43096/how-to-fix-incorrect-srid-of-the-geometry-column
+https://gis.stackexchange.com/questions/28835/changing-geometry-type-from-point-to-multipoint-within-existing-table-in-postgis
+
+drop coluna
+https://www.postgresql.org/docs/8.1/static/sql-altertable.html
+http://www.postgresqltutorial.com/postgresql-drop-column/
+
+tipos de geometria
+https://postgis.net/docs/GeometryType.html
+
+CREATE EXTENSION IF NOT EXISTS postgis_sfcgal;
+https://stackoverflow.com/questions/46180024/st-approximatemedialaxis-with-tin-input
+
+proximo passo usar a ST_Snap
+http://postgis.org/docs/ST_Snap.html
+https://gis.stackexchange.com/questions/52232/how-to-snap-lines-to-points-automatically
+
+
+
+ALTER TABLE testehidrografia
+ADD COLUMN buffer
+GEOMETRY(MultiPolygon,3003,2);
+
+SELECT UpdateGeometrySRID('testehidrografia','geom',3003);
+
+UPDATE testehidrografia
+SET buffer=ST_Multi(ST_Buffer(geom,100));
+
+ALTER TABLE poligono
+	ADD COLUMN teste_ama geometry(MultiLineString,4326)
+
+ALTER TABLE poligono DROP COLUMN teste_ama;
+	
+CREATE EXTENSION IF NOT EXISTS postgis_sfcgal;
+UPDATE poligono
+SET teste_ama=ST_Multi(ST_ApproximateMedialAxis(geom));
+
+SELECT ST_ApproximateMedialAxis(ST_GeomFromText('POLYGON (( 190 190, 10 190, 10 10, 190 10, 190 20, 160 30, 60 30, 60 130, 190 140, 190 190 ))'));
+
+CREATE TABLE buffer_union AS SELECT
+ST_Union(buffer)::GEOMETRY(MultiPolygon,3003),
+ROUND((ST_Area(ST_Union(buffer))/1000)::numeric,2)
+FROM testehidrografia;
+
+ALTER TABLE testehidrografia
+DROP COLUMN buffer;
