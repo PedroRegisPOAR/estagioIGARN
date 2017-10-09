@@ -47,3 +47,23 @@ FROM testehidrografia;
 
 ALTER TABLE testehidrografia
 DROP COLUMN buffer;
+
+
+########################
+
+
+CREATE EXTENSION IF NOT EXISTS postgis_sfcgal;
+
+ALTER TABLE pedaco_acudes DROP COLUMN col_st_ama;
+
+SELECT ST_GeometryType(geom) FROM pedaco_acudes ;
+
+SELECT ST_GeomFromText(ST_AsText(geom), 4326) FROM geom;
+
+ALTER TABLE pedaco_acudes
+ADD COLUMN col_st_ama geometry(MultiLineString, 4326);
+
+UPDATE pedaco_acudes
+SET col_st_ama=ST_Multi(ST_ApproximateMedialAxis(ST_MakePolygon(geom)));
+
+
