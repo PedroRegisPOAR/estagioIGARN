@@ -1,23 +1,26 @@
-1) Criar uma base cartografica, o nome adotado foi "base_cart".
+No pgAdmi 4
+
+
+1)Clicar em server. Pedri para conectar com o servidor, para isso sera necessario informar a senha. Uma vez conectado clicar postegreSQL -> Databases -> create -> Database. E entao criar uma base de dados, no caso cartografica, o nome adotado foi "base_cart".
 
 2) Clicar no "x" em vermelho para conectar a nova base de dados, a que
 foi criada com o nome "base_car".
 
-3) No pgAdmin ir no submenu "Extensões", clicar com o botão direito
- clicar no opção "Extension"
+3) No pgAdmin ir no submenu "ExtensÃµes", clicar com o botÃ£o direito
+ clicar no opÃ§Ã£o "Extension"
 
-4) Pesquisar pela extenção postgis no campo nome. Notar que a interface
- a lista suspensa que abre não é muito intuitiva, da ao entender
+4) Pesquisar pela extenÃ§Ã£o postgis no campo nome. Notar que a interface
+ a lista suspensa que abre nÃ£o Ã© muito intuitiva, da ao entender
 se esta pesquisando.
 
 5) Clicar em salvar.
 
 6) QGIS clicar no icone do "elefante" (simbolo do postgre), clicar em novo
-para criar uma nova conexão, e dar um nome qualquer para essa conexão.
+para criar uma nova conexÃ£o, e dar um nome qualquer para essa conexÃ£o.
 No campo maquina colocar "localhost". No campo base de dados colocar
 op mesmo nome dado no item 1), no caso "base_cart". Colocar no campo
-usuario "postgres". Agora pode-se testar a conexão. Aparecendo 
-uma mesagem que a conesão foi estabelecida pode-se clicar em ok.
+usuario "postgres". Agora pode-se testar a conexÃ£o. Aparecendo 
+uma mesagem que a conesÃ£o foi estabelecida pode-se clicar em ok.
 Agora pode-se clicar em conectar.
 
 
@@ -26,5 +29,5 @@ Clicar PistGIS -> "con_base_cart" -> public.Clicar no icone da setinha
 para baixo.
 
 
-8) Selecionar o shape. Clicar em opções de atualização.
+8) Selecionar o shape. Clicar em opÃ§Ãµes de atualizaÃ§Ã£o.
 
