@@ -67,3 +67,8 @@ UPDATE pedaco_acudes
 SET col_st_ama=ST_Multi(ST_ApproximateMedialAxis(ST_MakePolygon(geom)));
 
 
+
+https://trac.osgeo.org/postgis/wiki/UsersWikiQGIS
+http://strimas.com/spatial/r-postgis-2/
+https://docs.qgis.org/2.0/en/docs/training_manual/databases/db_manager.html
+https://faunaliagis.wordpress.com/category/spatialite/
