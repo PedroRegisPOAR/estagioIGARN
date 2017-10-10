@@ -72,3 +72,67 @@ https://trac.osgeo.org/postgis/wiki/UsersWikiQGIS
 http://strimas.com/spatial/r-postgis-2/
 https://docs.qgis.org/2.0/en/docs/training_manual/databases/db_manager.html
 https://faunaliagis.wordpress.com/category/spatialite/
+
+
+---###---
+
+CREATE EXTENSION IF NOT EXISTS postgis_sfcgal;
+
+ALTER TABLE IF EXISTS acud_intersects DROP COLUMN col_st_p;
+
+-- SELECT ST_GeometryType(geom) FROM pedaco_acudes ;
+
+--SELECT ST_GeomFromText(ST_AsText(geom), 4326) FROM geom;
+
+ALTER TABLE acud_intersects
+ADD COLUMN col_st_p geometry(MultiPolygon, 4326);
+
+UPDATE acud_intersects
+SET col_st_p=ST_Multi(ST_Buffer(st_buildarea(geom), 50));
+
+
+################
+https://gis.stackexchange.com/questions/89808/postgresql-finding-all-lines-intersecting-with-a-polygon
+
+CREATE EXTENSION IF NOT EXISTS postgis_sfcgal;
+
+SELECT acud_intersects_buff.id, hidro_intersects.id 
+FROM acud_intersects_buff, hidro_intersects 
+WHERE ST_Intersects(hidro_intersects.geom, acud_intersects_buff.geom);
+
+
+################
+https://gis.stackexchange.com/questions/222465/how-to-check-a-set-of-points-are-inside-a-polygon-or-not-in-postgis
+
+CREATE EXTENSION IF NOT EXISTS postgis_sfcgal;
+
+--ALTER TABLE IF EXISTS acud_intersects DROP COLUMN col_st_c;
+
+--ALTER TABLE acud_intersects_buff
+--ADD COLUMN col_st_c geometry(MultiPolygon, 4326);
+
+
+SELECT acud_intersects_buff.geom, int_acudes.id
+FROM acud_intersects_buff, int_acudes
+WHERE ST_Contains(acud_intersects_buff.geom, int_acudes.geom)
+
+
+################
+
+
+CREATE EXTENSION IF NOT EXISTS postgis_sfcgal;
+
+SELECT pedaco_acudes_buff.id, int_acudes.id
+FROM pedaco_acudes_buff, int_acudes
+WHERE ST_Contains(pedaco_acudes_buff.geom, int_acudes.geom)
+
+
+################
+Query que funcionou como o esperado.
+
+CREATE EXTENSION IF NOT EXISTS postgis_sfcgal;
+
+SELECT pedaco_acudes_buff.id, int_acudes.id, pedaco_hidrografia.id
+FROM pedaco_acudes_buff, int_acudes, pedaco_hidrografia
+WHERE ST_Contains(pedaco_acudes_buff.geom, int_acudes.geom)
+AND ST_Intersects(pedaco_hidrografia.geom, pedaco_acudes_buff.geom);
