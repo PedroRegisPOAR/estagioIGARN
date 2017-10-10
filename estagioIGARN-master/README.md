@@ -128,3 +128,9 @@ http://twiav-tt.blogspot.com.br/2012/07/postgis-using-latitude-and-longitude-to.
 Usandop o Excel para fazer pontos.
 http://libguides.mit.edu/c.php?g=176295&p=1161396
 http://excelgeocodingtool.com/
+
+
+Links de mais tutorias:
+http://www.vertabelo.com/blog/technical-articles/getting-started-with-postgis-your-first-steps-with-the-geography-data-type
+
+https://selectoid.wordpress.com/2008/11/14/a-look-at-st_intersects-st_overlaps-and-st_intersection/
