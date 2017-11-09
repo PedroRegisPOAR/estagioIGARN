@@ -136,3 +136,45 @@ SELECT pedaco_acudes_buff.id, int_acudes.id, pedaco_hidrografia.id
 FROM pedaco_acudes_buff, int_acudes, pedaco_hidrografia
 WHERE ST_Contains(pedaco_acudes_buff.geom, int_acudes.geom)
 AND ST_Intersects(pedaco_hidrografia.geom, pedaco_acudes_buff.geom);
+
+
+@#$ Códigos funcioando em 09-11-2017
+
+CREATE EXTENSION IF NOT EXISTS postgis_sfcgal;
+
+CREATE TABLE IF NOT EXISTS acudes_buff (id int8 primary key);
+
+SELECT AddGeometryColumn('acudes_buff', 'geom', '4326', 'MultiPolygon', 2);
+
+INSERT INTO acudes_buff(id, geom)
+SELECT tabela.id, ST_Multi(ST_Buffer(ST_BuildArea(geom), 50))
+FROM acudes_z25 AS tabela
+WHERE ST_IsValid(ST_BuildArea(tabela.geom));
+
+
+$$$
+
+
+CREATE EXTENSION IF NOT EXISTS postgis_sfcgal;
+
+CREATE TABLE IF NOT EXISTS acudes_int (id int8 primary key);
+
+SELECT AddGeometryColumn('acudes_int', 'geom', '4326', 'MultiLineString', 2);
+
+INSERT INTO acudes_int(id, geom)
+SELECT tabela.id, ST_Multi(ST_ApproximateMedialAxis(ST_BuildArea(tabela.geom)))
+FROM acudes_z25 as tabela
+WHERE ST_IsValid(ST_BuildArea(tabela.geom));
+
+
+$$$
+
+CREATE EXTENSION IF NOT EXISTS postgis_sfcgal;
+
+CREATE TABLE IF NOT EXISTS lines (geom geometry);
+
+INSERT INTO lines(geom)
+SELECT ST_ShortestLine(hifrografia_z25.geom, acudes_int.geom)
+FROM acudes_buff, acudes_int, hifrografia_z25
+WHERE ST_Contains(acudes_buff.geom, acudes_int.geom)
+AND ST_Intersects(hifrografia_z25.geom, acudes_buff.geom);
